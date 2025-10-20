@@ -1,0 +1,20 @@
+[project]
+name = "workflow"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "bcrypt>=5.0.0",
+    "beautifulsoup4>=4.14.2",
+    "dotenv>=0.9.9",
+    "faiss-cpu>=1.12.0",
+    "fastapi>=0.119.0",
+    "langchain-community>=0.3.31",
+    "langchain[google-genai]>=0.3.27",
+    "langgraph>=0.6.10",
+    "psycopg2-binary>=2.9.11",
+    "scipy>=1.16.2",
+    "sqlalchemy>=2.0.44",
+    "uvicorn>=0.38.0",
+]
