@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy.orm import relationship
 from db.base import Base
 
 class User(Base):
@@ -8,3 +9,4 @@ class User(Base):
     email = Column(String(185), unique=True, nullable=False)
     password = Column(String, nullable=False)
 
+    workers = relationship("Worker", back_populates='owner', cascade="all, delete")
