@@ -1,5 +1,4 @@
 from sqlalchemy.orm import Session
-from db.base import SessionLocal
 from schemas.user import UserCreate, UserOut
 from services.user_service import create_user
 from fastapi import APIRouter, Depends

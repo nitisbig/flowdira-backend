@@ -1,10 +1,16 @@
+import os
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from urllib.parse import quote_plus
 
-passoword = quote_plus('Nitesh!1')
+load_dotenv()
 
-DB_URL = f'postgresql://postgres:{passoword}@34.63.211.31:5432/postgres'
+password = quote_plus(os.getenv("DB_PASSWORD"))
+DB_HOST = os.getenv('HOST')
+DB_IP = os.getenv('DB_IP')
+
+DB_URL = f'postgresql://postgres:{password}@{DB_IP}:{DB_HOST}/postgres'
 
 engine = create_engine(DB_URL)
 
