@@ -8,10 +8,11 @@ def create_user(db: Session, user_data: UserCreate) -> User:
     user = User(
         name = user_data.name,
         email= user_data.email,
-        password = hashed_pwd
+        hashed_password = hashed_pwd
     )
     db.add(user)
     db.commit()
+    db.refresh(user)
     return user
 
 def get_user_by_id(db: Session, user_id: int) -> User | None:

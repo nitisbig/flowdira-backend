@@ -7,6 +7,6 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(100), nullable=False)
     email = Column(String(185), unique=True, nullable=False)
-    password = Column(String, nullable=False)
+    hashed_password = Column(String, nullable=False)
 
     workers = relationship("Worker", back_populates='owner', cascade="all, delete")
